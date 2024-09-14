@@ -31,18 +31,22 @@ export const Filters = () => {
 
    // Update the category param in the URL
    useEffect(() => {
-      setSearchParams((prevParams) => ({
-         ...Object.fromEntries(prevParams.entries()),
-         category: formValues.category,
-      }));
+      if (formValues.category) {
+         setSearchParams((prevParams) => ({
+            ...Object.fromEntries(prevParams.entries()),
+            category: formValues.category,
+         }));
+      }
    }, [formValues.category, setSearchParams]);
 
    // Update the search param in the URL when debounced search changes
    useEffect(() => {
-      setSearchParams((prevParams) => ({
-         ...Object.fromEntries(prevParams.entries()),
-         search: debouncedSearch || undefined,
-      }));
+      if (formValues.search) {
+         setSearchParams((prevParams) => ({
+            ...Object.fromEntries(prevParams.entries()),
+            search: debouncedSearch,
+         }));
+      }
    }, [debouncedSearch, setSearchParams]);
 
    return (
