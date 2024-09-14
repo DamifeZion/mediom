@@ -28,11 +28,9 @@ export const Navbar = () => {
    }
 
    return (
-      <nav className="sticky top-0 left-0 bg-background">
+      <nav className="sticky top-0 left-0 z-20 bg-background">
          <header className="container flex items-center justify-between h-16 lg:gap-0">
-            <h1 className="text-xl font-bold">
-               Mediom
-            </h1>
+            <h1 className="text-xl font-bold">Mediom</h1>
 
             {isDesktop && <MenuItem />}
 
@@ -56,7 +54,7 @@ export const Navbar = () => {
                      </SheetHeader>
 
                      <ScrollArea className="pt-6">
-                        <MenuItem closeModal={() => setIsOpen(false)}/>
+                        <MenuItem closeModal={() => setIsOpen(false)} />
                      </ScrollArea>
                   </SheetContent>
                </Sheet>

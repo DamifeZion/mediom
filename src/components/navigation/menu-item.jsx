@@ -58,7 +58,7 @@ export const MenuItem = ({ closeModal }) => {
                         <Button
                            variant={isLogin ? "outline" : "default"}
                            className={cn(
-                              "w-full px-10 py-5 text-foreground font-semibold rounded-full",
+                              "w-full px-10 py-4 text-foreground font-semibold rounded-full",
                               {
                                  "text-primary-foreground": !isLogin,
                                  "font-semibold": isRouteActive(
