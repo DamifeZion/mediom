@@ -5,4 +5,5 @@ export const routeConstants = {
    myBlogs: "/myBlogs/:id",
    inReview: "/in_review",
    flagged: "/flagged",
+   create: "/create",
 };

@@ -1,6 +1,3 @@
 export const filterConstants = {
-   category: [
-      "all category"
-   ],
-   
-}
+   category: ["all category", "action", "videos", "music"],
+};

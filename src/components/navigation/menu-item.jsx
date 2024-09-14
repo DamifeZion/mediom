@@ -78,6 +78,6 @@ export const MenuItem = ({ closeModal }) => {
    );
 };
 
-MenuItem.PropTypes = {
+MenuItem.propTypes = {
    closeModal: PropTypes.func,
 };
