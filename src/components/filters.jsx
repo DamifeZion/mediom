@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { ComboBox } from "./ui/combo-box";
 import { filterConstants } from "@/constants/filter-const";
 import { routeConstants } from "@/constants/route-const";
-import { useDebounce } from "@/hooks/useDebounce";
+import { useDebounce } from "@/hooks/use-debounce";
 
 export const Filters = () => {
    const navigate = useNavigate();
