@@ -6,7 +6,6 @@ import { useSearchParams } from "react-router-dom";
 
 export const useFilter = () => {
    const [searchParams, setSearchParams] = useSearchParams();
-
    const [formValues, setFormValues] = useState({
       category: searchParams.get('category') || filterConstants.category[0],
       search: searchParams.get('search'),
