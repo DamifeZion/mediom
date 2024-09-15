@@ -22,7 +22,7 @@ export const BlogCard = ({ data, index }) => {
       <div className="relative flex flex-col justify-center">
          <img src="/blog-card.svg" className="object-cover rounded-md" />
 
-         <Card className="border-none shadow shadow-[0_0_15px_rgba(0_0_0/0.05)] min-[500px]:w-10/12 -mt-[20%] lg:-mt-[25%] place-self-center">
+         <Card className="border-none shadow-[0_0_15px_rgba(0_0_0/0.05)] min-[500px]:w-10/12 -mt-[20%] lg:-mt-[25%] place-self-center">
             <CardHeader className="pb-4">
                <CardDescription className="flex flex-wrap items-center justify-between font-medium justi text-foreground text-md">
                   <span>By {author || "Chinonso Elum"}</span>

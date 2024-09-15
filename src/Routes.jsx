@@ -2,6 +2,7 @@ import * as React from "react";
 import { Routes as Router, Route, Navigate } from "react-router-dom";
 import { routeConstants } from "./constants/route-const";
 import { Navbar } from "./components/navigation/navbar";
+import { LoadingHome } from "./components/loading-home";
 
 // Pages imports.
 const Login = React.lazy(() => import("@/pages/auth/Login"))
@@ -11,7 +12,7 @@ const BlogDetails = React.lazy(() => import("@/pages/BlogDetails"))
 const Routes = () => {
 
    return (
-      <React.Suspense fallback={<p>Loading...</p>}>
+      <React.Suspense fallback={<LoadingHome/>}>
          <Navbar />
 
          <Router>

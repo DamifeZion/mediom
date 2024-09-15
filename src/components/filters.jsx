@@ -9,15 +9,24 @@ import { routeConstants } from "@/constants/route-const";
 
 import { useFilter } from "@/hooks/use-fiilter";
 
-export const Filters = () => {
+export const Filters = ({categoryData}) => {
    const navigate = useNavigate();
-   const { formValues, handleSetFormField } = useFilter();
+   const { formValues, handleSetFormField } = useFilter(categoryData);
+
+console.log(categoryData?.data)
+
+const options = categoryData && categoryData.data && categoryData.data.length > 0
+    ? categoryData.data.map(item => ({
+        label: item.name,
+        value: String(item.id)
+      }))
+    : [];
 
    return (
       <div className="flex flex-wrap items-center justify-between w-full gap-3">
          <div className="flex gap-2">
             <ComboBox
-               array={filterConstants.category}
+               array={options}
                defaultValue={formValues.category}
                onValueChange={(value) => handleSetFormField("category", value)}
                triggerClassName="bg-transparent shadow-none"

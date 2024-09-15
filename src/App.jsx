@@ -1,10 +1,17 @@
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
+import { Toaster } from "sonner";
 
 function App() {
    return (
       <BrowserRouter>
          <Routes />
+         <Toaster
+            positon={"top-right"}
+            richColors
+            duration={5000}
+            closeButton
+         />
       </BrowserRouter>
    );
 }
