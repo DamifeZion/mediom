@@ -6,6 +6,7 @@ import { Navbar } from "./components/navigation/navbar";
 // Pages imports.
 const Login = React.lazy(() => import("@/pages/auth/Login"))
 const Home =React.lazy(() => import("@/pages/Home"));
+const BlogDetails = React.lazy(() => import("@/pages/BlogDetails"))
 
 const Routes = () => {
 
@@ -17,6 +18,7 @@ const Routes = () => {
             <Route index element={<Navigate to={routeConstants.login} />} />
             <Route path={routeConstants.login} element={<Login />} />
             <Route path={routeConstants.home} element={<Home />} />
+            <Route path={routeConstants.blogDetails} element={<BlogDetails />}/>
          </Router>
       </React.Suspense>
    )

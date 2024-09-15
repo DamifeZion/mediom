@@ -54,12 +54,8 @@ const Home = () => {
 
          {/* Blog Card Preview */}
          <section className="grid py-20 gap-x-6 gap-y-8 md:grid-cols-2">
-            {Array.from({length: 10}).map((data, index) => (
-               <BlogCard 
-                  key={index}
-                  index={index}
-                  data={data || {}}
-               />
+            {Array.from({ length: 10 }).map((data, index) => (
+               <BlogCard key={index} index={index} data={data || {}} />
             ))}
          </section>
       </main>
