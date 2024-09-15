@@ -7,7 +7,7 @@ function App() {
       <BrowserRouter>
          <Routes />
          <Toaster
-            positon={"top-right"}
+            position={"top-right"}
             richColors
             duration={5000}
             closeButton

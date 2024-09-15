@@ -14,8 +14,6 @@ export const useFilter = () => {
    });
    
 
-
-
    // Debounce the search value
    const debouncedSearch = useDebounce(formValues.search);
 

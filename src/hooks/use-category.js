@@ -17,7 +17,7 @@ export function useCategory() {
     });
 
     const fetchCategory = useCallback(
-        async (url) => {
+        async (url,add_all=true) => {
             setCategoryData((prev) => ({
                 ...prev,
                 isLoading: true,
@@ -26,10 +26,11 @@ export function useCategory() {
 
 
                 const response = await baseAxios.get(url);
+                const newData = add_all?[{ id: 0, name: "All" },...response.data]: response.data;
                 setCategoryData((prev) => ({
                     ...prev,
                     isLoading: false,
-                    data: response.data,
+                    data: newData
                 }));
             } catch (err) {
                 setCategoryData((prev) => ({
