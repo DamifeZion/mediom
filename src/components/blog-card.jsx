@@ -13,7 +13,10 @@ import { getCategoryColor } from "@/helpers/get-category-color";
 
 export const BlogCard = ({ data, index }) => {
    const { id, author, title, date, lastRead, category, desc } = data;
-   const { textColor, backgroundColor } = getCategoryColor(category || "lifestyle");
+
+   const { textColor, backgroundColor } = getCategoryColor(
+      category || "lifestyle"
+   );
 
    return (
       <div className="relative flex flex-col justify-center">
@@ -29,7 +32,7 @@ export const BlogCard = ({ data, index }) => {
                         backgroundColor: backgroundColor,
                         color: textColor,
                      }}
-                     className="px-3 py-1 text-xs font-semibold rounded-full"
+                     className="px-3 py-[5px] text-xs font-semibold rounded-full"
                   >
                      {category || "Lifestyle"}
                   </span>
@@ -52,7 +55,9 @@ export const BlogCard = ({ data, index }) => {
                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmodkk uyjtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerjhuy..."}
                </p>
 
-               <Link to={routeConstants.blogDetails.replace(":id", id || 2)}>
+               <Link
+                  to={routeConstants.blogDetails.replace(":id", id || index)}
+               >
                   <Button
                      variant="outline"
                      className="mt-4 min-w-[150px] py-5 bg-transparent hover:bg-transparent"

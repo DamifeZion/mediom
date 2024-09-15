@@ -8,8 +8,8 @@ export const useFilter = () => {
    const [searchParams, setSearchParams] = useSearchParams();
 
    const [formValues, setFormValues] = useState({
-      category: searchParams.get('category') || filterConstants.category[0],
-      search: searchParams.get('search'),
+      category: searchParams.get("category") || filterConstants.category[0],
+      search: searchParams.get("search"),
    });
 
    // Debounce the search value
@@ -40,12 +40,11 @@ export const useFilter = () => {
             ...Object.fromEntries(prevParams.entries()),
             search: debouncedSearch,
          }));
-      }
-      else {
+      } else {
          setSearchParams((prevParams) => ({
             ...Object.fromEntries(prevParams.entries()),
-            search: ""
-         }))
+            search: "",
+         }));
       }
    }, [debouncedSearch, setSearchParams]);
 

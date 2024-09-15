@@ -16,14 +16,16 @@ import {
 } from "../ui/sheet";
 import { Menu } from "lucide-react";
 import { ScrollArea } from "../ui/scroll-area";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Navbar = () => {
+   const location = useLocation();
    const isDesktop = useMediaQuery("(min-width: 1024px)");
+
    const [isOpen, setIsOpen] = useState(false);
 
    // We dont show the navbar in any auth page
-   if (location.pathname.includes("auth")) {
+   if (location.pathname.includes("/x/")) {
       return null;
    }
 
