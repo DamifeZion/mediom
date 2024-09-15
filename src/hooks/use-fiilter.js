@@ -1,3 +1,4 @@
+import { filterConstants } from "@/constants/filter-const";
 import { routeConstants } from "@/constants/route-const";
 import { useDebounce } from "@/hooks/use-debounce";
 import { useState, useEffect } from "react";
@@ -7,7 +8,7 @@ export const useFilter = () => {
    const [searchParams, setSearchParams] = useSearchParams();
 
    const [formValues, setFormValues] = useState({
-      category: searchParams.get('category'),
+      category: searchParams.get('category') || filterConstants.category[0],
       search: searchParams.get('search'),
    });
 
@@ -39,6 +40,12 @@ export const useFilter = () => {
             ...Object.fromEntries(prevParams.entries()),
             search: debouncedSearch,
          }));
+      }
+      else {
+         setSearchParams((prevParams) => ({
+            ...Object.fromEntries(prevParams.entries()),
+            search: ""
+         }))
       }
    }, [debouncedSearch, setSearchParams]);
 
